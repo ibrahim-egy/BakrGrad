@@ -1,0 +1,54 @@
+{% include 'partials/header.html' %}
+
+<header class="header">
+    <h1 class="main__heading">Welcome to this awesome Detector</h1>
+    <p class="main__subheading">Fast and accurate <span>Wood Knots</span> detection</p>
+    <img src="static/images/logo.png" alt="Logo" class="logo">
+    <a href="#main" class="start-btn btn">Get Started <i class="fa-solid fa-circle-play"></i></a>
+    <div class="cards">
+        <div class="card">
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <p class="card__text">Real Time Detection</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-crosshairs"></i>
+            <p class="card__text">Precise Identification</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-briefcase-medical"></i>
+            <p class="card__text">Treatment Plan</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-warehouse"></i>
+            <p class="card__text">History Access</p>
+        </div>
+    </div>
+</header>
+
+<main id="main" class="main">
+    <h3 class="main__heading">Capture An Image For Detection</h3>
+    <i class="fa-solid fa-crosshairs"></i>
+    <form action="#" method="post" class="main__form" enctype="multipart/form-data">
+        <label for="user-input" class="user-input-label btn">Upload Image <i class="fa-solid fa-upload"></i></label>
+        <input id="user-input" type="file" name="user-image-upload" accept="image/*">
+        <img src="#" alt="user-input" class="user-input-image">
+    </form>
+    <div class="result">
+        <h3 class="result-head">Class</h3>
+        <h3 class="result-head">Score</h3>
+        <p class="result-class"></p>
+        <p class="result-score"></p>
+    </div>
+    <div id="popup">
+        <div class="popup-text">
+            <div class="popup-close"><i class="fa-solid fa-square-xmark"></i></div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+{% include 'partials/footer.html' %}
