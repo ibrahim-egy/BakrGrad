@@ -12,8 +12,9 @@ def home():
 @app.route('/detect', methods=["POST"])
 def detect():
     if request.method == "POST":
-        image = request.files.get('image')
+        image = request.files.get('omarImage')
         # image.save(f"static/upload/{image.filename}")
+
         data = {
             "class": image.filename,
             "score": "99.9"

@@ -48,9 +48,11 @@ body {
 
 .main__heading {
     font-weight: 300;
+    text-align: center;
 }
 .main__subheading {
     font-weight: 300;
+    text-align: center;
 }
 
 .main__subheading > span {
@@ -85,7 +87,7 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
     gap: 2rem;
@@ -276,27 +278,35 @@ body {
 
 }
 
-@media (max-width: 75em) {
-    html {
-        font-size: 62.5%;
-    }
-    .header {
-        margin-top: 8rem;
-    }
-}
-@media (max-width: 56.25em) {
-    html {
-        font-size: 50%;
-    }
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 @media (max-width: 37.5em) {
     html {
         font-size: 43.75%;
     }
 }
+
+@media (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+        background-color: green;
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 75em) {
+    html {
+        font-size: 62.5%;
+    }
+    .header {
+        justify-content: center;
+    }
+    /*
+    .header {
+        margin-top: 8rem;
+    } */
+}
+
 
 @keyframes spin {
     from {

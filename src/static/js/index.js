@@ -3,15 +3,11 @@
 const userInput = document.getElementById('user-input')
 userInput.addEventListener('change', detect)
 
-
 async function detect(e) {
     flipLoading()
-
-    if (displayImage(e)) {
-        getResult()
-    }
+    displayImage(e)
+    getResult()
     flipLoading()
-
 }
 
 const updateUI = async (data) => {
@@ -42,20 +38,19 @@ function flipLoading() {
 
 function displayImage(e) {
 
-    if (isFileImage()) {
-        const url = URL.createObjectURL(e.target.files[0])
-        const userImage = document.querySelector('.user-input-image')
-        userImage.setAttribute('src', url)
-        userImage.classList.add('display')
-        return true
-    }
-    return false
+
+    const url = URL.createObjectURL(e.target.files[0])
+    const userImage = document.querySelector('.user-input-image')
+    userImage.setAttribute('src', url)
+    userImage.classList.add('display')
+
+
 
 }
 async function getResult() {
     const file = userInput.files[0]
     const fd = new FormData()
-    fd.append('image', file)
+    fd.append('omarImage', file)
     await postDataFile('/detect', fd)
     .then (data => {
         updateUI(data)
@@ -64,19 +59,19 @@ async function getResult() {
 
 
 // validation function return true only when jpg files are uploaded
-function isFileImage(file) {
-    const userInput = document.getElementById('user-input')
-    var isValid = /\.jpe?g$/i.test(userInput.value);
-
-    if (!isValid) {
-        displayPop('Only jpg files allowed!')
-        return false
-    } else {
-        removePop()
-        return true
-    }
-
-}
+//function isFileImage(file) {
+//    const userInput = document.getElementById('user-input')
+//    var isValid = /\.jpe?g$/i.test(userInput.value);
+//
+//    if (!isValid) {
+//        displayPop('Only jpg files allowed!')
+//        return false
+//    } else {
+//        removePop()
+//        return true
+//    }
+//
+//}
 
 // popup functionality
 
