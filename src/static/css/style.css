@@ -4,6 +4,7 @@
 *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -13,13 +14,14 @@
     --text-color: #E4D192;
     --background-color: rgba(187, 187, 187, .2);
     --border-color: rgba(228, 209, 146, .3);
+    --border-radius: 5px;
     --hover-color: #ddaa3f;
     --animation: all .4s ease;
     --shadow: 0 1rem 3rem rgba(0, 0, 0, .3);
 }
 
 html {
-    font-size: 75%;
+    font-size: 62.5%;
     background-color: #222;
     background-image:
         linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
@@ -41,35 +43,26 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 3rem;
-    font-size: 2rem;
-    min-height: calc(100vh - 9rem);
+    font-size: 3rem;
+    min-height: 100vh;
     font-family: inherit;
 }
 
-.main__heading {
+.heading {
     font-weight: 300;
     text-align: center;
 }
-.main__subheading {
+.sub-heading {
     font-weight: 300;
     text-align: center;
 }
 
-.main__subheading > span {
+.sub-heading > span {
     font-weight: 700;
     position: relative;
     text-transform: uppercase;
-    font-size: 1.7rem;
-}
-
-.main__subheading > span::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--text-color);
+    font-size: 2.5rem;
+    text-decoration: underline
 }
 
 .logo {
@@ -78,7 +71,7 @@ body {
 }
 
 .start-btn {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
@@ -100,8 +93,10 @@ body {
     text-align: center;
     border: 2px solid var(--background-color);
     transition: all .2s;
-    max-width: 13rem;
+    max-width: 25rem;
     box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+
 }
 .card:hover {
     transform: scale(0.95);
@@ -111,19 +106,14 @@ body {
 
 }
 .card > i {
-    font-size: 3.5rem;
+    font-size: 5rem;
     margin-bottom: 2rem;
 }
 
-.main__form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-}
+
 
 .btn {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     padding: 1rem 2rem;
     background-color: var(--background-color);
@@ -145,8 +135,8 @@ body {
     font-size: 2rem;
     font-family: inherit;
     background-color: rgba(0, 0, 0, .2);
-    padding: 10rem 0;
-    min-height: calc(100vh - 20rem);
+    padding: 5rem 0;
+    min-height: 100vh;
     position: relative;
 
 }
@@ -155,14 +145,54 @@ body {
     font-size: 8rem;
 }
 
-#user-input {
+.main__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+}
+
+.user-input {
     display: none;
 }
 
+.form-wrapper {
+    display: flex;
+    gap: 10rem;
+    width: 80%;
+    justify-content: center;
+}
+
+
+.model-icon {
+    width: 10rem;
+    aspect-ratio: 1;
+}
+
+.user-input-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 20rem
+}
+
+.user-input-label span {
+    font-weight: 700;
+}
+
+.image-box {
+    width: 100%;
+    height: 35rem;
+    padding: 1rem;
+}
 
 .user-input-image {
-    width: 25rem;
-    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+
     display: none;
     border-radius: .5rem;
 }
@@ -170,12 +200,15 @@ body {
     display: block
 }
 
+
+
+
 .result {
 
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     background-color: var(--background-color);
-    visibility: hidden;
+
     border-radius: .5rem;
     border: 1px solid var(--border-color);
     transition: var(--animation);

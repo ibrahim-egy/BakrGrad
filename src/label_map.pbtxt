@@ -1,0 +1,39 @@
+item {
+    id: 1
+    name: 'Crack'
+}
+
+item {
+    id: 2
+    name: 'Dead_Knot'
+}
+
+item {
+    id: 3
+    name: 'Knot_missing'
+}
+
+item {
+    id: 4
+    name: 'Live_Knot'
+}
+
+item {
+    id: 5
+    name: 'Marrow'
+}
+
+item {
+    id: 6
+    name: 'Quartzity'
+}
+
+item {
+    id: 7
+    name: 'knot_with_crack'
+}
+
+item {
+    id: 8
+    name: 'resin'
+}

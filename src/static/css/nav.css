@@ -5,6 +5,7 @@
     align-items: center;
     padding: 1.5rem 2.5rem;
     justify-content: space-between;
+    width: 100%;
 
 }
 
@@ -20,8 +21,7 @@
 }
 
 .nav__navigation {
-    padding: 1.2rem;
-    border-radius: 5px;
+    padding: 1.3rem;
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
@@ -30,6 +30,7 @@
 .nav__list {
     display: flex;
     list-style: none;
+    gap: 2rem;
 }
 .nav__link:link,
 .nav__link:visited {
@@ -39,10 +40,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.35rem;
-}
-.nav__item:not(:last-child) {
-    margin-right: 2rem;
+    font-size: 1.65rem;
+    gap: .5rem;
 }
 
 /*

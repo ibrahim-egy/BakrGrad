@@ -1,8 +1,9 @@
 {% include 'partials/header.html' %}
 
 <header class="header">
-    <h1 class="main__heading">Beat Brittle Wood & Dead knots</h1>
-    <p class="main__subheading">Fast and accurate <span>Wood defect</span> Detection and Classification</p>
+    {% include 'partials/nav.html' %}
+    <h1 class="heading">Beat Brittle Wood & Dead knots</h1>
+    <p class="sub-heading">Fast and accurate <span>Wood defect</span> Detection and Classification</p>
     <img src="static/images/logo.png" alt="Logo" class="logo">
     <a href="#main" class="start-btn btn">Get Started <i class="fa-solid fa-circle-play"></i></a>
     <div class="cards">
@@ -27,19 +28,48 @@
 </header>
 
 <main id="main" class="main">
-    <h3 class="main__heading">Capture An Image For Detection</h3>
+    <h1 class="main__heading heading">Choose your preferred machine learning model</h1>
     <i class="fa-solid fa-crosshairs"></i>
-    <form action="#" method="post" class="main__form" enctype="multipart/form-data">
-        <label for="user-input" class="user-input-label btn">Upload Image <i class="fa-solid fa-upload"></i></label>
-        <input id="user-input" type="file" name="user-image-upload" accept="image/*">
-        <img src="#" alt="user-input" class="user-input-image">
-    </form>
-    <div class="result">
-        <h3 class="result-head">Class</h3>
-        <h3 class="result-head">Score</h3>
-        <p class="result-class"></p>
-        <p class="result-score"></p>
+    <div class="form-wrapper">
+        <form action="#" method="post" class="main__form" enctype="multipart/form-data">
+            <label for="user-input-tf" class="user-input-label btn">
+                <span>TensorFlow</span>
+                <img src="static/images/svg/tensorflow.svg" alt="tensorflow icon" class="model-icon">
+            </label>
+            <input class="user-input" id="user-input-tf" type="file" accept="image/jpeg">
+            <div class="image-box btn">
+                <img src="#" alt="user-input" class="user-input-image user-input-image-tf">
+            </div>
+            <div class="result result-tf">
+                <h3 class="result-head">Class</h3>
+                <h3 class="result-head">Score</h3>
+                <p class="result-class"></p>
+                <p class="result-score"></p>
+            </div>
+        </form>
+
+        <form action="#" method="post" class="main__form" enctype="multipart/form-data">
+            <label for="user-input-yolo" class="user-input-label btn">
+                <span>Yolov8</span>
+                <img src="static/images/yolov8.png" alt="Yolov8 icon" class="model-icon">
+            </label>
+            <input class="user-input" id="user-input-yolo" type="file" accept="image/jpeg">
+            <div class="image-box btn">
+                <img src="#" alt="user-input" class="user-input-image user-input-image-yolo">
+            </div>
+            <div class="result result-yolo">
+                <h3 class="result-head">Class</h3>
+                <h3 class="result-head">Score</h3>
+                <p class="result-class"></p>
+                <p class="result-score"></p>
+            </div>
+        </form>
+
     </div>
+
+
+
+
     <div id="popup">
         <div class="popup-text">
             <div class="popup-close"><i class="fa-solid fa-square-xmark"></i></div>
